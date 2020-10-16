@@ -7,7 +7,6 @@ const socketio = require('socket.io');
 const socketEvents = require('./web/socket'); 
 const routes = require('./web/routes'); 
 const appConfig = require('./config/app-config'); 
-const Db  = require("./config/db");
 
 
 class Server{
@@ -36,8 +35,8 @@ class Server{
         const port =  process.env.PORT || 4000;
         const host = process.env.HOST || `localhost`;      
 
-        this.http.listen(port, host, () => {
-            console.log(`Listening on http://${host}:${port}`);
+        this.http.listen(port, () => {
+            console.log(`Listening on port ${port}`);
         });
     }
 
